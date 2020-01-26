@@ -1,11 +1,18 @@
 @import "~bulma/sass/utilities/initial-variables"
 
 // Config vars
-$kaldi-red: #FD461E
-$kaldi-red-invert: #fff
+// Kaldi logo brand color: #FD461E
+$kaldi-red: #D64000
+$kaldi-invert: #fff
+$kyochie-primary: #2996ef
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $kyochie-primary
+$primary-invert: #fff
+$body-color: #333
+$black: #2b2523
+
+.navbar .navbar-menu
+  box-shadow:none !important
 
 .content .taglist
   list-style: none
@@ -22,9 +29,6 @@ $primary-invert: $kaldi-red-invert
     margin-bottom: 1.5rem
     margin-top: 0
 
-.pagination .navbar
-	justify-content: center
-
 // Helper Classes
 .full-width-image-container
   width: 100vw
@@ -32,14 +36,491 @@ $primary-invert: $kaldi-red-invert
   position: relative
   left: 50%
   right: 50%
-  margin: 5em -50vw
+  margin: 2em -50vw
   background-size: cover
   background-position: bottom
   display: flex
   justify-content: center
   align-items: center
 
+.full-width-image
+    width: 100vw
+    height: 400px
+    background-size: cover
+    background-position: bottom
+    display: flex
+    justify-content: center
+    align-items: center
+
+.btn
+    display: inline-block
+    padding: 12px 16px 10px
+    font-size: 18px
+    font-size: 1rem
+    line-height: 1.25
+    background-color: #fff
+    border-radius: .25rem
+    text-decoration: none
+    font-weight: 700
+    color: #CC3700
+    text-align: center
+    -webkit-box-shadow: inset 0 0 0 2px #CC3700
+    box-shadow: inset 0 0 0 2px #f40
+    -webkit-transition: all .15s ease
+    transition: all .15s ease
+
 .margin-top-0
   margin-top: 0 !important
 
-@import "~bulma"
+.navbar-item .icon
+  color: $primary
+// Override for use of svg's from https://simpleicons.org/
+.icon svg
+  width: 1.5rem
+  height: 1.5rem
+  fill: currentColor
+.navbar-brand .navbar-item.logo
+  padding: 0 1rem
+
+//Menu overrides
+$menu-item-color: $white-ter
+$menu-item-hover-color: $black !important
+$menu-item-hover-background-color: $black
+$menu-item-active-color: $primary-invert
+$menu-item-active-background-color: $primary-invert
+$menu-list-border-left: 1px solid $primary-invert
+$menu-label-color: $white-ter
+
+
+.menu-label
+  font-size: 1em !important
+  text-align: left
+.menu-list
+  list-style: none !important
+  text-align: left
+.social
+  padding: 2em
+.social a
+    padding: .5em .5em .3em .5em
+    border-radius: 1em
+    background-color: $white-ter
+    margin: .5em
+    width: 1em
+    height: 1em
+    vertical-align: middle
+    display: inline
+
+// blog roll
+.blog-list-item.is-featured
+  background-color: #d6400033;
+.blog-list-item header
+  display: flex;
+  margin-bottom: 1em;
+.blog-list-item .featured-thumbnail
+  flex-basis: 35%;
+  margin: 0 1.5em 0 0;
+
+
+@import "~bulma/sass/utilities/_all"
+@import "~bulma/sass/base/_all"
+@import "~bulma/sass/elements/_all"
+@import "~bulma/sass/form/_all"
+@import "~bulma/sass/components/_all"
+@import "~bulma/sass/grid/_all"
+@import "~bulma/sass/layout/_all"
+
+
+.pagination
+  .navbar
+    .navbar-item
+      display: inline-block
+      margin: 0 0.5em
+
+.postList
+  @extend .section;
+  padding-top: 0
+  .container
+    padding: 0
+  .post
+    margin-bottom: 8em
+    &:first-child
+      padding-top: 3rem
+      .title
+        font-size: 3.5em
+        font-weight: bold
+    header
+      margin-bottom: 1em
+
+// responsiveness
++tablet-only
+  .blog-list-item .featured-thumbnail
+    flex-basis: 50%;
+
++mobile
+  .blog-list-item header
+    display: block
+  .blog-list-item .featured-thumbnail
+    text-align: center;
+    max-width: 70%;
+    margin: 0 0 1em;
+
+body
+  background: #fff
+  margin: 0
+  padding: 0
+
+.js-loading *
+  animation-play-state: paused !important
+
+  &:before, &:after
+    animation-play-state: paused !important
+
+.holospinner-header
+  min-height: 360px
+  padding: 2em 0
+  mix-blend-mode: multiply
+  background: url('../img/holo/holo-background.jpg')
+  width: 100%
+  background-position: center center
+  background-size: cover
+  background-color: #071923
+  overflow: hidden
+  position: relative
+
+  h1
+    background: -webkit-linear-gradient(#eafffb, #4dffda)
+    background: linear-gradient(#eafffb, #4dffda)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+    text-fill-color: transparent
+    font-family: "Roboto"
+    font-weight: 100
+    font-size: 3.5em
+    text-align: center
+    padding: 0 1rem
+    margin: 0
+
+.holospinner-wrapper
+  width: 360px
+  height: 360px
+  max-width: 100%
+  max-height: 100vw
+  animation: appear ease-out 1s
+  mix-blend-mode: screen
+  transform-origin: center center
+  margin: auto
+
+.holospinner
+  width: 360px
+  height: 360px
+  max-width: 100%
+  max-height: 100%
+  position: relative
+  display: block
+  overflow: hidden
+
+  .layer
+    display: block
+    width: 800px
+    height: 800px
+    max-width: 100%
+    max-height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background-position: center center
+    mix-blend-mode: screen
+    background-repeat: no-repeat
+    background-size: contain
+
+.layer-01
+  background-image: url('../img/holo/01-solid.png')
+  -webkit-animation-name: rotateForward
+  -webkit-animation-duration: 30s
+  animation-name: rotateForward
+  animation-duration: 20s
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+  animation-direction: reverse
+
+.layer-02
+  background-image: url('../img/holo/02x.png')
+  display: none
+
+.layer-03
+  background-image: url('../img/holo/03-solid.png')
+  -webkit-animation-name: rotateForward
+  -webkit-animation-duration: 60s
+  animation-name: rotateForward
+  animation-duration: 60s
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+
+.layer-04
+  background-image: url('../img/holo/04-solid.png')
+
+.layer-05
+  background-image: url('../img/holo/05-solid.png')
+  -webkit-animation-name: rotateForward
+  -webkit-animation-duration: 30s
+  animation-name: rotateForward
+  animation-duration: 90s
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+  animation-direction: reverse
+
+.layer-06
+  background-image: url('../img/holo/06-solid.png')
+  -webkit-animation-name: rotateForward
+  -webkit-animation-duration: 30s
+  animation-name: rotateForward
+  animation-duration: 30s
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+  animation-direction: reverse
+
+.layer.layer-07
+  background-image: url('../img/holo/photo.jpg')
+  width: 60%
+  height: 60%
+  background-size: cover
+  border-radius: 100%
+  mix-blend-mode: normal
+  left: 20%
+  top: 20%
+  background-color: #54ffdf
+  opacity: 0.8
+  background-blend-mode: multiply
+  overflow: hidden
+
+.scanlines
+  background: url('../img/holo/scanlines.png')
+  width: 100%
+  height: 100%
+  display: block
+  -webkit-animation-name: rise
+  -webkit-animation-duration: 3s
+  animation-name: rise
+  animation-duration: 3s
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+  background-size: 500px
+
+  &:before
+    content: ""
+    display: block
+    background: #000
+    width: 100%
+    height: 100%
+    position: absolute
+    top: -110%
+    border-bottom: solid 1px #00fff3
+    animation: opentop ease-in 1.5s
+
+  &:after
+    content: ""
+    display: block
+    background: #000
+    width: 100%
+    height: 100%
+    position: absolute
+    bottom: -110%
+    border-top: solid 1px #00fff3
+    animation: openbot ease-in 1.5s
+
+  &:before, &:after
+    box-shadow: 0px 0px 50px #00ffff, 0px 0px 50px #00ffff inset
+
+.layer.layer-07
+  &:before
+    content: ""
+    display: block
+    background: #000
+    width: 100%
+    height: 100%
+    position: absolute
+    left: -110%
+    animation: openleft ease-out 1s
+
+  &:after
+    content: ""
+    display: block
+    background: #000
+    width: 100%
+    height: 100%
+    position: absolute
+    right: -110%
+    top: 0px
+    animation: openright ease-out 1s
+
+  &:before, &:after
+    animation-iteration-count: 1
+    z-index: 100
+
+.js-loading .holo-load
+  animation-play-state: initial !important
+
+  *
+    animation-play-state: initial !important
+
+.loading-screen
+  opacity: 0
+  transition: opacity 0.5s
+
+.js-loading .loading-screen
+  display: block
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  overflow: hidden
+  background: #222
+  opacity: 1
+  height: 100%
+
+.holo-load
+  display: inline-block
+  position: absolute
+  width: 120px
+  height: 120px
+  left: 50%
+  top: 50%
+  margin-top: -60px
+  margin-left: -60px
+
+  &:before
+    content: "LOADING"
+    letter-spacing: 4px
+    text-indent: 4px
+    text-align: center
+    font-weight: bold
+    line-height: 130px
+    width: 100%
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    height: 120px
+    color: #777
+    font-family: sans-serif
+
+  div
+    position: absolute
+    border: 4px solid #80FCFF
+    opacity: 1
+    border-radius: 50%
+    width: 120px
+    height: 120px
+    transform-origin: center center
+    animation: ripple-load 1s cubic-bezier(0, 0.2, 0.8, 1) infinite
+
+    &:nth-child(2)
+      animation-delay: -0.5s
+
+@-moz-keyframes rotateForward
+  0%
+    -moz-transform: rotate(1deg)
+
+  100%
+    -moz-transform: rotate(360deg)
+
+@-webkit-keyframes rotateForward
+  0%
+    -webkit-transform: rotate(1deg)
+
+  100%
+    -webkit-transform: rotate(360deg)
+
+@keyframes rotateForward
+  0%
+    -webkit-transform: rotate(1deg)
+    transform: rotate(1deg)
+
+  100%
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
+
+@-moz-keyframes rotateBack
+  100%
+    -moz-transform: rotate(-360deg)
+
+@-webkit-keyframes rotateBack
+  100%
+    -webkit-transform: rotate(-360deg)
+
+@keyframes rotateBack
+  100%
+    -webkit-transform: rotate(-360deg)
+    transform: rotate(-360deg)
+
+@-moz-keyframes rise
+  100%
+    background-position-y: 50%
+
+@-webkit-keyframes rise
+  100%
+    background-position-y: 50%
+
+@keyframes rise
+  100%
+    background-position-y: 50%
+
+@keyframes appear
+  0%
+    transform: scale(0) rotate(-70deg)
+
+  50%
+    transform: scale(0) rotate(-70deg)
+
+  100%
+    transform: scale(1) rotate(0deg)
+
+@keyframes opentop
+  0%
+    top: -50%
+
+  75%
+    top: -50%
+
+  100%
+    top: -110%
+
+@keyframes openbot
+  0%
+    bottom: -50%
+
+  75%
+    bottom: -50%
+
+  100%
+    bottom: -110%
+
+@keyframes openleft
+  0%
+    left: -50%
+
+  75%
+    left: -50%
+
+  100%
+    left: -110%
+
+@keyframes openright
+  0%
+    right: -50%
+
+  75%
+    right: -50%
+
+  100%
+    right: -110%
+
+@keyframes ripple-load
+  0%
+    transform: scale(0)
+    opacity: 1
+
+  100%
+    transform: scale(1)
+    opacity: 0

@@ -20,7 +20,7 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            <div class="content is-medium" dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
               <p>
                 {date} - posted by{' '}

@@ -5,6 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: 'Gatsby + WordPress Starter',
+    description: 'Coming Soon.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
